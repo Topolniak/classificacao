@@ -23,8 +23,7 @@ if dados is not None:
     dfBase = pd.read_csv(dados)
     #AgGrid(dfBase)  # interativo
 
-    st.write("Sobre o arquivo: ", dfBase.shape)
-
+    st.write(f'O arquivo contém {dfBase.shape[1]} atributos e {dfBase.shape[0]} registros.')
     st.markdown("Percentual de alunos por status:")
     dados = dfBase['status'].value_counts(normalize=True) * 100
     st.dataframe(dados)
